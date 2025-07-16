@@ -47,4 +47,33 @@ If received on a work device or by an employee:
    - Notify IT and affected user(s)
    - Educate employees on scam format
 
-4. **Optional SIEM Rule**:  
+4. **Optional SIEM Rule**:
+5. rule: “Suspicious SMS claiming Apple Support”
+condition: message contains “Apple Pay” AND “Call Apple Support”
+severity: medium
+
+---
+
+## 🧭 MITRE ATT&CK Mapping
+
+| Technique ID | Technique Name                  | Description                              |
+|--------------|----------------------------------|------------------------------------------|
+| T1566.001    | Phishing: Spearphishing via Service | Message sent via iMessage (SMS-based)    |
+| T1586        | Compromise Accounts             | Attempts to steal Apple ID credentials   |
+| T1598.003    | Phishing for Information        | Seeks user interaction and verification  |
+| T1110.001    | Brute Force: Credential Stuffing | If credentials are reused or tested later|
+
+---
+
+## 🧠 Lessons for Analysts
+
+- Even well-crafted phishing SMS messages often include subtle giveaways
+- Training users to recognize smishing attacks is just as important as email phishing
+- Attacks like these can be used as awareness material and case studies in threat detection programs
+
+---
+
+## 📂 Related Files
+
+- `README.md` – Project overview
+- `apple_phishing_sms.jpg` – Scam screenshot
